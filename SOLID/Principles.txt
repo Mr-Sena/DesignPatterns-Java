@@ -1,0 +1,141 @@
+Coesão:
+Uma classe coesa faz bem uma única coisa
+Classes coesas não devem ter várias responsabilidades
+
+
+Encapsulamento:
+Getters e setters não são formas eficientes de aplicar encapsulamento
+É interessante fornecer acesso apenas ao que é necessário em nossas classes
+O encapsulamento torna o uso das nossas classes mais fácil e intuitivo
+
+Acoplamento:
+Acoplamento é a dependência entre classes
+Acoplamento nem sempre é ruim, é impossível criar um sistema sem nenhum acoplamento
+Devemos controlar o nível de acoplamento na nossa aplicação
+
+OBS: Uma classe que tende a crescer "para sempre" é uma 
+forte candidata a sofrer alguma espécie de refatoração.
+
+
+S.O.L.I.D: Os 5 princípios da POO
+S — Single Responsiblity Principle (Princípio da responsabilidade única)
+O — Open-Closed Principle (Princípio Aberto-Fechado)
+L — Liskov Substitution Principle (Princípio da substituição de Liskov)
+I — Interface Segregation Principle (Princípio da Segregação da Interface)
+D — Dependency Inversion Principle (Princípio da inversão da dependência)
+
+
+
+Princípio da responsabilidade única, o primeiro é mais intuítivo de assimilar, diz que 
+classe deve conhecer e ser responsável por suas próprias regras de negócio;
+
+
+o princípio Aberto/Fechado (OCP) diz que um sistema deve ser aberto para a 
+extensão, mas fechado para a modificação
+ - Isso significa que devemos poder criar novas funcionalidades e 
+estender o sistema sem precisar modificar muitas classes já existentes
+
+
+
+o Princípio de Substituição de Liskov (LSP) diz que devemos poder 
+substituir classes base(superclasses) por suas classes derivadas 
+em qualquer lugar, sem problema.
+
+
+Princípio de Segregação de Interfaces (ISP) diz que uma classe não 
+deve ser obrigada a implementar um método que ela não precisa;
+
+
+Princípio de Inversão de Dependência (DIP) diz que implementações devem 
+depender de abstrações e abstrações não devem depender de implementações;
+
+
+
+
+
+
+
+
+
+
+O príncipio orienta SRP, que 
+ * Que classes/métodos/funções/módulos devem ter uma única responsabilidade 
+bem definida e
+ * que, segundo o Princípio de Responsabilidade Única (SRP), 
+uma classe deve ter um e apenas um motivo para ser alterada, (alguma modificação 
+sofrida por esta).
+
+
+OBS: Uma classe que tende a crescer "para sempre" é uma 
+forte candidata a sofrer alguma espécie de refatoração.
+
+
+
+
+
+
+
+
+A ideia do princípio aberto fechado é que entidades de software, entidades 
+entendam como classes, módulos, funções ou coisas do gênero, diz que 
+um sistema deve ser aberto para a extensão, mas fechado para a modificação
+
+Em termos técnicos, isso infere um baixo acoplamento entre classes, visto que, se houver dependência entre elas, 
+para o funcionamento de determinada regra do negócio, a instância do objeto deve ser feita na parte mais externa do 
+sistema - ou a classe main (principal).
+
+
+
+
+Principio de substituição de Liskov
+
+Um objeto da classe S, pode ser usado no lugar de um objeto da classe T, 
+desde que S seja subtipo da classe T.
+
+Esse princípio preza muita pela idealização da herança.
+Se determinada classe tem algo em comun com outra classe, porém tem um 
+comportamento espécifico que não se relaciona com sua responsabilidade, 
+ela não deveria herdar de tal classe, pois, por essa perspectiva ela 
+é mais uma classe "irmã" do que uma classe filha.
+
+Por isso nesses caso é recomendado utilizar composição para reutilização
+de códigos da parte em comum, e não herança - que compartilharia mais do que deveria
+
+
+    CASO
+
+CONTEXTO: embora o quadrado e o cubo possuam as mesmas dimesões para definir 
+a face, o cubo possui uma médida de profundidade, não sendo equivalentes.
+Ou seja, são semelhantes, porém, não são do mesmo, e serão usados para funções 
+independentes uma das outras.
+
+O ideal neste caso é que haja composição, isto é, que tenha uma classe que reúna as 
+características em comun para poder fazer um reutilização de código.
+
+EXEMPLO: extraia as partes que são tidas em comum, e defina como propriedade 
+de um outra classe, nesse caso, séria a médida bidimensional (altura x largua)
+Então instancie em cada classe, individualmente  e independentemente, para fazer a 
+reutilização de código sem sofre com danos colaterais.
+
+
+
+
+"Uma classe não deveria ser forçada a depender métodos que não utilizará."
+ - Robert (Uncle Bob) Martin
+
+As interfaces devem definir apenas os métodos que fazem sentido para seu contexto;
+
+
+
+
+
+
+"Abstrações não devem depender de implementações.
+Implementaçãoes devem depender de abstrações."
+	- Robert (Uncle Bob) Martin
+
+As interfaces são menos propensas a sofrer mudanças enquanto implementações podem mudar a qualquer momento;
+por isso, é mais interessante e mais seguro para o nosso código depender de interfaces 
+(classes abstratas, assinaturas de métodos e interfaces em si), do que das implementações de uma classe.
+
+Classes de alto nível não deve ter dependências de classe de baixo nível; ambas devem depender de abstrações.
