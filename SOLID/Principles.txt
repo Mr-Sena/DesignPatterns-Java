@@ -1,4 +1,4 @@
-Coesão:
+Coesão: 
 Uma classe coesa faz bem uma única coisa
 Classes coesas não devem ter várias responsabilidades
 
